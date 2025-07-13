@@ -32,4 +32,5 @@ jobs:
 
       - name: Run test suite
         run: |
+          php artisan key:generate
           php artisan test
