@@ -33,4 +33,6 @@ jobs:
       - name: Run test suite
         run: |
           php artisan key:generate
+          npm i
+          npm run build
           php artisan test
