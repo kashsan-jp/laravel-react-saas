@@ -35,6 +35,7 @@ jobs:
       - name: Run test suite
         env:
           DB_CONNECTION: sqlite
+          DB_DATABASE: laravel
         run: |
           php artisan key:generate
           php artisan migrate:fresh
