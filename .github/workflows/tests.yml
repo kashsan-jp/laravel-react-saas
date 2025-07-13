@@ -33,6 +33,7 @@ jobs:
       - name: Run test suite
         run: |
           php artisan key:generate
+          touch /database/database.sqlite
           php artisan migrate:fresh
           npm i
           npm run build
