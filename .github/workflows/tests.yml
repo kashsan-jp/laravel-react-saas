@@ -29,11 +29,14 @@ jobs:
           composer install --no-interaction
           composer update
 
+      - name: Env_file
+        run: cp .env.example .env
 
       - name: Run test suite
+        env:
+          DB_CONNECTION: sqlite
         run: |
           php artisan key:generate
-          cd /database && touch database.sqlite
           php artisan migrate:fresh
           npm i
           npm run build
