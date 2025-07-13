@@ -27,6 +27,7 @@ jobs:
       - name: Run Composer
         run: |
           composer install --no-interaction
+          composer update
 
 
       - name: Run test suite
