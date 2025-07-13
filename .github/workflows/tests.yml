@@ -42,9 +42,8 @@ jobs:
         run: cp .env.example .env
 
       - name: Run test suite
-        # env:
-        #   DB_CONNECTION: sqlite
-        #   DB_DATABASE: laravel
+        env:
+          DB_DATABASE: laravel
         run: |
           php artisan key:generate
          
