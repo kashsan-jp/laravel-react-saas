@@ -17,8 +17,8 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test_db
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: laravel
           TZ: Asia/Tokyo
         ports:
           - 3306:3306
