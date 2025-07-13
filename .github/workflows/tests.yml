@@ -13,16 +13,16 @@ jobs:
   tests:
     name: Ryn test
     runs-on: ubuntu-latest
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: laravel
-          TZ: Asia/Tokyo
-        ports:
-          - 3306:3306
-        options: --health-cmd "mysqladmin ping" --health-interval 20s 
+    # services:
+    #   mysql:
+    #     image: mysql:5.7
+    #     env:
+    #       MYSQL_ROOT_PASSWORD: password
+    #       MYSQL_DATABASE: laravel
+    #       TZ: Asia/Tokyo
+    #     ports:
+    #       - 3306:3306
+    #     options: --health-cmd "mysqladmin ping" --health-interval 20s 
     steps:
       - uses: actions/checkout@v2
 
@@ -48,7 +48,7 @@ jobs:
         #   DB_DATABASE: laravel
         run: |
           php artisan key:generate
-          php artisan migrate:fresh
+         
           npm i
           npm run build
           php artisan test
